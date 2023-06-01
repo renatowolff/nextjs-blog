@@ -1,13 +1,12 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import styles from "./page.module.css";
 
-
 const links = [
   {
     id: 1,
-    title: "Home",
+    title: "Início",
     url: "/",
   },
   {
@@ -22,12 +21,12 @@ const links = [
   },
   {
     id: 4,
-    title: "About",
+    title: "Sobre Nós",
     url: "/about",
   },
   {
     id: 5,
-    title: "Contact",
+    title: "Contato",
     url: "/contact",
   },
   {
@@ -38,25 +37,28 @@ const links = [
 ];
 
 const Navbar = () => {
-    return (
-      <div className={styles.container}>
-        <Link
-        href="/" className={styles.logo}>home
-        </Link>
+  return (
+    <div className={styles.container}>
+      <Link href="/" className={styles.logo}>
+        home
+      </Link>
       <div className={styles.links}>
-        {links.map(link => (
-          <Link key={link.id} href={link.url} className={styles.link}>{link.title}</Link>
+        {links.map((link) => (
+          <Link key={link.id} href={link.url} className={styles.link}>
+            {link.title}
+          </Link>
         ))}
         <button
-        className={styles.logout}
-        onClick={() => {
-          console.log('sessão encerrada.')
-                  }}>
-                    sair
-                    </button>
-        </div>
+          className={styles.logout}
+          onClick={() => {
+            console.log("sessão encerrada.");
+          }}
+        >
+          sair
+        </button>
       </div>
-    );
-  };
-  
-  export default Navbar;
+    </div>
+  );
+};
+
+export default Navbar;
