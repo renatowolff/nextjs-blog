@@ -1,0 +1,11 @@
+.closeButton{
+    cursor: pointer;
+    float: right;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #0b4f2d;
+    background-color: #0b4f2d;
+    border-radius: 3px;
+    padding: 10px 15px;
+}

@@ -1,6 +1,8 @@
 "use client";
 
+import Modal from "@/components/modal/Modal";
 import Link from "next/link";
+import { useState } from "react";
 import styles from "./page.module.css";
 
 const links = [
@@ -37,6 +39,12 @@ const links = [
 ];
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((showModal) => !showModal);
+  };
+
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
@@ -48,15 +56,15 @@ const Navbar = () => {
             {link.title}
           </Link>
         ))}
-        <button
-          className={styles.logout}
-          onClick={() => {
-            console.log("sessão encerrada.");
-          }}
-        >
-          sair
-        </button>
       </div>
+      <button className={styles.logout} onClick={() => openModal()}>
+        Login
+      </button>
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        openModal={() => openModal()}
+      />
     </div>
   );
 };

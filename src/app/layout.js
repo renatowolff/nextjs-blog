@@ -1,3 +1,5 @@
+"use client";
+
 import { Exo } from "next/font/google";
 import Footer from "../components/footer/footer";
 import Navbar from "../components/navbar/navbar";
